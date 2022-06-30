@@ -1,7 +1,7 @@
 CREATE TABLE restaurante (
   id bigint NOT NULL AUTO_INCREMENT,
   nome varchar(255) NOT NULL,
-  aprovado bit(1) DEFAULT false,
+  aprovado bit DEFAULT false,
   cnpj varchar(18) NOT NULL,
   descricao varchar(1000) DEFAULT NULL,
   cep varchar(9) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE restaurante (
   taxa_de_entrega_em_reais decimal(19,2) DEFAULT NULL,
   tempo_de_entrega_maximo_em_minutos int DEFAULT NULL,
   tempo_de_entrega_minimo_em_minutos int DEFAULT NULL,
-  tipo_de_cozinha_id bigin NOT NULL,
+  tipo_de_cozinha_id bigint NOT NULL,
   user_id  bigint DEFAULT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (tipo_de_cozinha_id) REFERENCES tipo_de_cozinha(id),

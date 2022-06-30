@@ -13,7 +13,7 @@
     <properties>
       <!-- Properties for Hibernate -->
       <property name="eclipselink.ddl-generation" value="none"/>
-      <property name="eclipselink.ddl-generation.output-mode" value="both" />
+      <!--<property name="eclipselink.ddl-generation.output-mode" value="both" />-->
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="eclipselink.logging.level.sql" value="FINE"/>
     </properties>

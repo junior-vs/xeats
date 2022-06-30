@@ -20,7 +20,6 @@ public class RestauranteResource {
 
   @PersistenceContext
   EntityManager manager;
-
   @GET
   @Path("/{id}")
   @Produces(MediaType.APPLICATION_JSON)
@@ -58,7 +57,7 @@ public class RestauranteResource {
   @GET
   @Path("/nome/{name}")
   public Response findByName(@PathParam("name") String name) {
-    Query namedQuery = manager.createNamedQuery("Restaurante.findByNome");
+    Query namedQuery = manager.createNamedQuery("Restaurante.findByNome", Restaurante.class);
     namedQuery.setParameter("nome", name);
     List<Restaurante> resultList = namedQuery.getResultList();
     List<RestauranteDto> collect = resultList.stream().map(RestauranteDto::new)
